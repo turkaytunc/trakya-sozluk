@@ -5,11 +5,13 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CourseComponent} from './CourseComponent';
 import {CoursesService} from './course/courses.service';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseComponent
+    CourseComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
