@@ -8,21 +8,24 @@ import {CoursesService} from './course/courses.service';
 import { ListComponent } from './list/list.component';
 import {FormsModule} from '@angular/forms';
 import {SummaryPipe} from './summary.pipe';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseComponent,
     ListComponent,
-    SummaryPipe
+    SummaryPipe,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
-    CoursesService
+    CoursesService,
+    FavoriteComponent
   ],
   bootstrap: [AppComponent]
 })
