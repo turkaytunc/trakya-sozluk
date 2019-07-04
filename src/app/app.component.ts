@@ -8,10 +8,6 @@ import {FavoriteChangeEventArgs} from './favorite/favorite.component';
   encapsulation: ViewEncapsulation.Emulated
 })
 export class AppComponent {
+  viewMode = 'ngSwitchDefault';
 
-  courses = [1, 2, 3];
-
-  doWeHaveAnyCourses() {
-    return this.courses.length !== 0 ? true : false;
-  }
 }
