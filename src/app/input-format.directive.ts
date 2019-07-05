@@ -6,7 +6,7 @@ import {Directive, ElementRef, HostListener, Input} from '@angular/core';
 export class InputFormatDirective {
 
   // tslint:disable-next-line:no-input-rename
-  @Input('format') format;
+  @Input('appInputFormat') format;
 
   constructor(private el: ElementRef) {
   }
@@ -19,7 +19,6 @@ export class InputFormatDirective {
     } else {
       this.el.nativeElement.value = value.toUpperCase();
     }
-
   }
-  
+
 }
