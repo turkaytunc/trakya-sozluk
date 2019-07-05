@@ -5,29 +5,13 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!--  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css"/>-->
+  <!--  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css"/>-->
   <title>Document</title>
 </head>
 <body>
 
-<ul class="nav nav-pills">
-  <li class="btn btn-primary mr-1" [class.active]="viewMode=='map'" (click)="viewMode= 'map'">
-    <a>Map View</a>
-  </li>
-  <li class="btn btn-primary mr-1" [class.active]="viewMode=='list'" (click)="viewMode='list'">
-    <a>List View</a>
-  </li>
-  <li class="btn btn-primary" [class.active]="viewMode=='test'" (click)="viewMode='test'" >
-    <a>Test View</a>
-  </li>
-</ul>
+<span>{{ task.assignee?.name }}</span>
 
-<div [ngSwitch]="viewMode">
-  <div *ngSwitchCase="'map'" style="height: 100vh; background-color: #fff82e">Map view Content</div>
-  <div *ngSwitchCase="'list'">List View Content</div>
-  <div *ngSwitchCase="'ngSwitchDefault'">Otherwise</div>
-  <div *ngSwitchCase="'test'" style="background-color: #825eff; height: 90vh;">Test</div>
-</div>
 </body>
 </html>
 

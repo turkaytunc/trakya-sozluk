@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
 import {SummaryPipe} from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { PanelComponent } from './panel/panel.component';
+import { InputFormatDirective } from './input-format.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PanelComponent } from './panel/panel.component';
     ListComponent,
     SummaryPipe,
     FavoriteComponent,
-    PanelComponent
+    PanelComponent,
+    InputFormatDirective
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,4 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {FavoriteChangeEventArgs} from './favorite/favorite.component';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +7,13 @@ import {FavoriteChangeEventArgs} from './favorite/favorite.component';
   encapsulation: ViewEncapsulation.Emulated
 })
 export class AppComponent {
-  viewMode = 'ngSwitchDefault';
+
+  task = {
+    title: 'Rewiew',
+    assignee: {
+      name: 'Enes Usta',
+      age: 21
+    }
+  };
 
 }
