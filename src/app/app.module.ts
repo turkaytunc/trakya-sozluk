@@ -10,18 +10,18 @@ import {SummaryPipe} from './summary.pipe';
 import {FavoriteComponent} from './favorite/favorite.component';
 import {InputFormatDirective} from './input-format.directive';
 import {ContactFormComponent} from './contact-form/contact-form.component';
-import {NotesComponent} from './notes/notes.component';
 import {NavigationComponent} from './navigation/navigation.component';
 import {FeedbackComponent} from './feedback/feedback.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import {TopicsComponent} from './topics/topics.component';
 
 
 const appRoutes: Routes = [
   {
-    path: 'notes',
-    component: NotesComponent
+    path: 'topics',
+    component: TopicsComponent
   },
   {
     path: 'feedback',
@@ -33,7 +33,7 @@ const appRoutes: Routes = [
   },
   {
     path: '',
-    component: NotesComponent,
+    component: TopicsComponent,
     pathMatch: 'full'
   },
   {
@@ -51,10 +51,10 @@ const appRoutes: Routes = [
     FavoriteComponent,
     InputFormatDirective,
     ContactFormComponent,
-    NotesComponent,
     NavigationComponent,
     FeedbackComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    TopicsComponent
   ],
   imports: [
     BrowserModule,
