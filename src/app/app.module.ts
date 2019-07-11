@@ -14,6 +14,29 @@ import { NotesComponent } from './notes/notes.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {RouterModule, Routes} from '@angular/router';
+
+
+const appRoutes: Routes = [
+  {
+    path: 'notes',
+    component: NotesComponent
+  },
+  {
+    path: 'feedback',
+    component: FeedbackComponent
+  },
+  {
+    path: '',
+    component: NotesComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
+  }
+]
+
 
 @NgModule({
   declarations: [
@@ -32,6 +55,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     CoursesService,
