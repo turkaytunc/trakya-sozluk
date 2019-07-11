@@ -1,4 +1,5 @@
-export class Topic {
-  constructor(public id: string, public name: string, public description: string) {
-  }
+export interface Topic {
+  id: string;
+  name: string;
+  description: string;
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Topic} from '../feedback/feedback.component';
+import {Topic} from './model/topic';
+import {TopicService} from '../topic.service';
 
 @Component({
   selector: 'app-topics',
@@ -9,10 +10,9 @@ import {Topic} from '../feedback/feedback.component';
 })
 export class TopicsComponent implements OnInit {
 
-  topics: Topic[] = [];
+  private topics: Array<any>;
 
-
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private service: TopicService) {
   }
 
   ngOnInit() {
@@ -20,18 +20,10 @@ export class TopicsComponent implements OnInit {
     console.log(this.topics);
   }
 
-  public getAllTopics() {
-    let status;
-    const url = 'http://localhost:8080/topics';
-    this.http.get<Topic[]>(url).subscribe(
-      res => {
-        this.topics = res;
-        status = true;
-        return status;
-      },
-      err => {
-      }
-    );
+  public getAllTopics(): void {
+    this.service.getAll().subscribe(data => {
+      this.topics = data;
+    });
   }
 
 }
