@@ -18,9 +18,11 @@ export class TopicService {
   }
 
   getAll(): Observable<Topic[]> {
-    return this.httpService.get(this.ALL_TOPICS).pipe(
-      map(data => data as Topic[])
-    );
+    /**return this.httpService.get(this.ALL_TOPICS).pipe(
+     map(data => data as Topic[])
+     );
+     */
+    return this.httpService.get<Topic[]>(this.ALL_TOPICS);
   }
 
 

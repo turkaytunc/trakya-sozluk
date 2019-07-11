@@ -16,14 +16,14 @@ export class TopicsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getAllTopics();
+  }
+
+  public getAllTopics() {
     this.userService.getAll()
       .subscribe(data => {
         this.topics = data;
       });
-  }
-
-  public getAllTopics() {
-
   }
 
 
