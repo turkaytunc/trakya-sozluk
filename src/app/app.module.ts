@@ -11,11 +11,12 @@ import {FavoriteComponent} from './favorite/favorite.component';
 import {InputFormatDirective} from './input-format.directive';
 import {ContactFormComponent} from './contact-form/contact-form.component';
 import {NavigationComponent} from './navigation/navigation.component';
-import {FeedbackComponent} from './feedback/feedback.component';
+import {FeedbackComponent, Topic} from './feedback/feedback.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {TopicsComponent} from './topics/topics.component';
+import {TopicService} from './topic.service';
 
 
 const appRoutes: Routes = [
@@ -65,7 +66,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     CoursesService,
-    FavoriteComponent
+    FavoriteComponent,
+    TopicService
   ],
   bootstrap: [AppComponent]
 })
