@@ -1,7 +1,12 @@
 import {Injectable} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import {Topic} from './topics/model/topic';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +20,8 @@ export class TopicService {
   constructor(private http: HttpClient) {
   }
 
-  getAll(): Observable<any> {
+  getAll(): Observable<Topic[]> {
+    // @ts-ignore
     return this.http.get(this.ALL_TOPICS);
   }
 

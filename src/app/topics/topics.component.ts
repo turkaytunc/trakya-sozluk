@@ -10,9 +10,9 @@ import {TopicService} from '../topic.service';
 })
 export class TopicsComponent implements OnInit {
 
-  private topics: Array<any>;
+  private topics: Topic[] = [];
 
-  constructor(private http: HttpClient, private service: TopicService) {
+  constructor(private service: TopicService) {
   }
 
   ngOnInit() {
@@ -21,9 +21,23 @@ export class TopicsComponent implements OnInit {
   }
 
   public getAllTopics(): void {
-    this.service.getAll().subscribe(data => {
-      this.topics = data;
-    });
+    this.service.getAll().subscribe(
+      res => {
+        res.forEach(item => {
+          // @ts-ignore
+          console.log(item);
+          // @ts-ignore
+          this.topics.push(new Topic({
+            id: item.id,
+            name: item.name,
+            description: item.description
+          }));
+
+        });
+      },
+      err => {
+      }
+    );
   }
 
 }
