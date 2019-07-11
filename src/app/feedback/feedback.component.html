@@ -1,1 +1,70 @@
-<p>feedback works!</p>
+<form #f="ngForm" class="rol-sm-12" (ngSubmit)="submit(f)">
+
+  <div class="form-group rol-lg-6">
+    <label for="ID" class="for">ID</label>
+    <input required
+           ngModel
+           name="id"
+           #id="ngModel"
+           (change)="log(id)"
+           id="ID"
+           type="text"
+           class="form-control"
+           minlength="3"
+           maxlength="10"
+    >
+    <div class="alert alert-danger"
+         *ngIf="firstName.touched && !firstName.valid">
+
+      <div *ngIf="firstName.errors.required">
+        ID is required
+      </div>
+      <div *ngIf="firstName.errors.minlength">
+        ID should be minimum {{ firstName.errors.minlength.requiredLength }} characters.
+      </div>
+      <div *ngIf="firstName.errors.maxlength">
+        ID should be maximum 15 characters
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="form-group rol-lg-6">
+    <label for="firstName" class="for">Name</label>
+    <input required
+           ngModel
+           name="name"
+           #firstName="ngModel"
+           (change)="log(firstName)"
+           id="firstName"
+           type="text"
+           class="form-control"
+           minlength="3"
+           maxlength="10"
+    >
+    <div class="alert alert-danger"
+         *ngIf="firstName.touched && !firstName.valid">
+
+      <div *ngIf="firstName.errors.required">
+        First name is required
+      </div>
+      <div *ngIf="firstName.errors.minlength">
+        First name should be minimum {{ firstName.errors.minlength.requiredLength }} characters.
+      </div>
+      <div *ngIf="firstName.errors.maxlength">
+        First name should be maximum 15 characters
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <label for="comment">Description</label>
+    <textarea ngModel name="description" id="comment" cols="30" rows="10" class="form-control">
+    </textarea>
+  </div>
+  <p>{{ f.value | json }}</p>
+  <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>

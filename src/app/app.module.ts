@@ -7,14 +7,15 @@ import {CourseComponent} from './CourseComponent';
 import {CoursesService} from './course/courses.service';
 import {FormsModule} from '@angular/forms';
 import {SummaryPipe} from './summary.pipe';
-import { FavoriteComponent } from './favorite/favorite.component';
-import { InputFormatDirective } from './input-format.directive';
-import { ContactFormComponent } from './contact-form/contact-form.component';
-import { NotesComponent } from './notes/notes.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { FeedbackComponent } from './feedback/feedback.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import {FavoriteComponent} from './favorite/favorite.component';
+import {InputFormatDirective} from './input-format.directive';
+import {ContactFormComponent} from './contact-form/contact-form.component';
+import {NotesComponent} from './notes/notes.component';
+import {NavigationComponent} from './navigation/navigation.component';
+import {FeedbackComponent} from './feedback/feedback.component';
+import {NotFoundComponent} from './not-found/not-found.component';
 import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 
 const appRoutes: Routes = [
@@ -27,6 +28,10 @@ const appRoutes: Routes = [
     component: FeedbackComponent
   },
   {
+    path: 'contact',
+    component: ContactFormComponent
+  },
+  {
     path: '',
     component: NotesComponent,
     pathMatch: 'full'
@@ -35,7 +40,7 @@ const appRoutes: Routes = [
     path: '**',
     component: NotFoundComponent
   }
-]
+];
 
 
 @NgModule({
@@ -55,7 +60,8 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes, {enableTracing: true})
   ],
   providers: [
     CoursesService,
