@@ -5,7 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CourseComponent} from './CourseComponent';
 import {CoursesService} from './course/courses.service';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SummaryPipe} from './summary.pipe';
 import {FavoriteComponent} from './favorite/favorite.component';
 import {InputFormatDirective} from './input-format.directive';
@@ -17,6 +17,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {TopicsComponent} from './topics/topics.component';
 import {TopicService} from './topic.service';
+import {SignupFormComponent} from './signup-form/signup-form.component';
 
 
 const appRoutes: Routes = [
@@ -33,6 +34,10 @@ const appRoutes: Routes = [
     component: ContactFormComponent
   },
   {
+    path: 'login',
+    component: SignupFormComponent
+  },
+  {
     path: '',
     component: TopicsComponent,
     pathMatch: 'full'
@@ -40,7 +45,7 @@ const appRoutes: Routes = [
   {
     path: '**',
     component: NotFoundComponent
-  }
+  },
 ];
 
 
@@ -55,14 +60,16 @@ const appRoutes: Routes = [
     NavigationComponent,
     FeedbackComponent,
     NotFoundComponent,
-    TopicsComponent
+    TopicsComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, {enableTracing: true})
+    RouterModule.forRoot(appRoutes, {enableTracing: true}),
+    ReactiveFormsModule
   ],
   providers: [
     CoursesService,
