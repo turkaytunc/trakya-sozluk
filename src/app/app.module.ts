@@ -18,6 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {TopicsComponent} from './topics/topics.component';
 import {TopicService} from './topic.service';
 import {SignupFormComponent} from './signup-form/signup-form.component';
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 
 
 const appRoutes: Routes = [
@@ -32,6 +33,10 @@ const appRoutes: Routes = [
   {
     path: 'contact',
     component: ContactFormComponent
+  },
+  {
+    path: 'a',
+    component: NewCourseFormComponent
   },
   {
     path: 'login',
@@ -61,7 +66,8 @@ const appRoutes: Routes = [
     FeedbackComponent,
     NotFoundComponent,
     TopicsComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    NewCourseFormComponent
   ],
   imports: [
     BrowserModule,
