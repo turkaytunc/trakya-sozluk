@@ -1,5 +1,17 @@
-<ul *ngFor="let topic of person">
-  <li>{{topic.id}}</li>
-  <li>{{topic.name }}</li>
-  <li>{{topic.lastname}}</li>
-</ul>
+<table class="table table-striped"> <!-- style="margin-top: 15px"> -->
+  <thead>
+  <tr>
+    <th scope="col" class="font-weight-light" *ngFor="let p of header">
+      {{p}}
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="row-sm-12" *ngFor="let p of person; let i = index">
+    <th scope="col" class="font-weight-light">{{i}}</th>
+    <td scope="col" class="font-weight-light">{{p.id}}</td>
+    <td scope="col" class="font-weight-light">{{p.name}}</td>
+    <td scope="col" class="font-weight-light">{{p.lastname}}</td>
+  </tr>
+  </tbody>
+</table>
