@@ -10,7 +10,7 @@ import {PersonService} from '../person.service';
 export class PersonComponent implements OnInit {
 
   person: Person[];
-  header = ['#', 'Id', 'Firstname', 'Lastname'];
+  header = ['#', 'Id', 'Firstname', 'Lastname','Date'];
 
   constructor(private personService: PersonService) {
   }
