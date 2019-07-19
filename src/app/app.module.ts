@@ -18,13 +18,19 @@ import {HttpClientModule} from '@angular/common/http';
 import {TopicsComponent} from './topics/topics.component';
 import {TopicService} from './topic.service';
 import {SignupFormComponent} from './signup-form/signup-form.component';
-import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
+import {NewCourseFormComponent} from './new-course-form/new-course-form.component';
+import {PersonComponent} from './person/person.component';
+import {PersonService} from './person.service';
 
 
 const appRoutes: Routes = [
   {
     path: 'topics',
     component: TopicsComponent
+  },
+  {
+    path: 'person',
+    component: PersonComponent
   },
   {
     path: 'feedback',
@@ -67,7 +73,8 @@ const appRoutes: Routes = [
     NotFoundComponent,
     TopicsComponent,
     SignupFormComponent,
-    NewCourseFormComponent
+    NewCourseFormComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +87,8 @@ const appRoutes: Routes = [
   providers: [
     CoursesService,
     FavoriteComponent,
-    TopicService
+    TopicService,
+    PersonService
   ],
   bootstrap: [AppComponent]
 })
