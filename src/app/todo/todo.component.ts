@@ -3,6 +3,8 @@ import {TodoService} from '../todo.service';
 import {Todo} from './model/Todo';
 import {Self} from './model/Self';
 import {of} from 'rxjs';
+import {faCoffee} from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-todo',
