@@ -21,13 +21,18 @@ import {SignupFormComponent} from './signup-form/signup-form.component';
 import {NewCourseFormComponent} from './new-course-form/new-course-form.component';
 import {PersonComponent} from './person/person.component';
 import {PersonService} from './person.service';
-import { TodoComponent } from './todo/todo.component';
+import {TodoComponent} from './todo/todo.component';
+import {TodoService} from './todo.service';
 
 
 const appRoutes: Routes = [
   {
     path: 'topics',
     component: TopicsComponent
+  },
+  {
+    path: 'todo',
+    component: TodoComponent
   },
   {
     path: 'person',
@@ -90,7 +95,8 @@ const appRoutes: Routes = [
     CoursesService,
     FavoriteComponent,
     TopicService,
-    PersonService
+    PersonService,
+    TodoService
   ],
   bootstrap: [AppComponent]
 })
