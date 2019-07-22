@@ -23,47 +23,10 @@ import {PersonComponent} from './person/person.component';
 import {PersonService} from './person.service';
 import {TodoComponent} from './todo/todo.component';
 import {TodoService} from './todo.service';
+import { NewtodoComponent } from './newtodo/newtodo.component';
 
 
-const appRoutes: Routes = [
-  {
-    path: 'topics',
-    component: TopicsComponent
-  },
-  {
-    path: 'todo',
-    component: TodoComponent
-  },
-  {
-    path: 'person',
-    component: PersonComponent
-  },
-  {
-    path: 'feedback',
-    component: FeedbackComponent
-  },
-  {
-    path: 'contact',
-    component: ContactFormComponent
-  },
-  {
-    path: 'a',
-    component: NewCourseFormComponent
-  },
-  {
-    path: 'login',
-    component: SignupFormComponent
-  },
-  {
-    path: '',
-    component: TopicsComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    component: NotFoundComponent
-  },
-];
+
 
 
 @NgModule({
@@ -81,14 +44,14 @@ const appRoutes: Routes = [
     SignupFormComponent,
     NewCourseFormComponent,
     PersonComponent,
-    TodoComponent
+    TodoComponent,
+    NewtodoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, {enableTracing: true}),
     ReactiveFormsModule
   ],
   providers: [
