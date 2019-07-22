@@ -9,7 +9,6 @@ export class SummaryPipe implements PipeTransform {
     if (!value) {
       return null;
     }
-
     return value.substr(0, 50) + '...';
   }
 }

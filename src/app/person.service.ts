@@ -8,9 +8,8 @@ import {Person} from './person/model/person';
 })
 export class PersonService {
 
-  private BASE_URL = 'http://localhost:8080';
-  private PERSON = `${this.BASE_URL}\\person`;
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+  PERSON = `${URL.BASE}\\person`;
 
   constructor(private httpService: HttpClient) {
   }
@@ -18,5 +17,10 @@ export class PersonService {
   getAll(): Observable<Person[]> {
     return this.httpService.get<Person[]>(this.PERSON);
   }
+
+}
+
+export enum URL {
+  BASE = 'http://localhost:8080'
 
 }

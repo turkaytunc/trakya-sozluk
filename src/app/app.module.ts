@@ -21,6 +21,7 @@ import {SignupFormComponent} from './signup-form/signup-form.component';
 import {NewCourseFormComponent} from './new-course-form/new-course-form.component';
 import {PersonComponent} from './person/person.component';
 import {PersonService} from './person.service';
+import { TodoComponent } from './todo/todo.component';
 
 
 const appRoutes: Routes = [
@@ -74,7 +75,8 @@ const appRoutes: Routes = [
     TopicsComponent,
     SignupFormComponent,
     NewCourseFormComponent,
-    PersonComponent
+    PersonComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
