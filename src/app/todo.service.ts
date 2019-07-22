@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpHeaders, HttpClient} from '@angular/common/http';
+import {HttpHeaders, HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Todo} from './todo/model/Todo';
 
@@ -21,6 +21,7 @@ export class TodoService {
   }
 
   update(todo: Todo): void {
+
     this.http.post(this.TODO, todo).subscribe(
       res => {
         location.reload();
@@ -33,10 +34,12 @@ export class TodoService {
 
 
   delete(id: number) {
+
     const url = `${this.TODO}/${id.toString()}`;
     console.log(url);
-    this.http.delete(this.TODO, url).subscribe(
+    this.http.delete(url).subscribe(
       res => {
+        location.reload();
         console.log(res);
       },
       err => {
