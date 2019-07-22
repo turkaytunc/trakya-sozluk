@@ -24,6 +24,7 @@ import {PersonService} from './person.service';
 import {TodoComponent} from './todo/todo.component';
 import {TodoService} from './todo.service';
 import { NewtodoComponent } from './newtodo/newtodo.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 
 
@@ -52,7 +53,8 @@ import { NewtodoComponent } from './newtodo/newtodo.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [
     CoursesService,

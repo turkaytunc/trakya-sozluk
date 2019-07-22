@@ -23,12 +23,16 @@
     </div>
   </div>
 
-
   <div class="form-group">
-    <label for="done">Is Done</label>
-    <select ngModel name="done" id="done" class="form-control center_align">
+    <label for="done">Status</label>
+    <select required ngModel #done="ngModel" name="done" id="done" class="form-control center_align">
       <option [value]="true">Yes</option>
       <option [value]="false">No</option>
+      <div *ngIf="done.touched && !done.valid">
+        <div *ngIf="done.errors.required">
+          This section is required
+        </div>
+      </div>
     </select>
   </div>
 
