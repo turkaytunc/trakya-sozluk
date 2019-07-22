@@ -1,1 +1,4 @@
-<p>todo works!</p>
+<ul *ngFor="let todos of todo; let i = index">
+  <li>{{todos.description}}</li>
+  <li>{{self[i].href}}</li>
+</ul>
