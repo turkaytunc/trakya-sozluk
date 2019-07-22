@@ -35,4 +35,13 @@ export class TodoComponent implements OnInit {
       });
   }
 
+  private update(todo: Todo) {
+    this.service.update(todo);
+  }
+
+  private delete(id: number) {
+    console.log('test');
+    this.service.delete(id);
+  }
+
 }
