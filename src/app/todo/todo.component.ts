@@ -15,7 +15,6 @@ export class TodoComponent implements OnInit {
 
   todo: Todo[];
   self: Self[] = new Array();
-  count = 0;
 
   constructor(private service: TodoService) {
   }
@@ -35,8 +34,13 @@ export class TodoComponent implements OnInit {
       });
   }
 
-  private update(todo: Todo) {
-    this.service.update(todo);
+  private update(id: number) {
+    const str = window.prompt();
+    let todo = new Todo();
+    todo.setDescription(str);
+    todo.setDone(false);
+    console.log(todo);
+    this.service.update(todo, id);
   }
 
   private delete(id: number) {

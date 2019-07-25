@@ -20,13 +20,18 @@ export class TodoService {
     return this.http.get<Todo[]>(this.TODO);
   }
 
-  update(todo: Todo): void {
+  update(todo: Todo, id: number): void {
 
-    this.http.post(this.TODO, todo).subscribe(
+    const url = `${URL.BASE}/todo/${id.toString()}`;
+
+    // @ts-ignore
+    this.http.put(url).subscribe(
       res => {
+        console.log(res);
         location.reload();
       },
       err => {
+        console.log(err);
         alert('An error has occured while updating Todo');
       }
     );

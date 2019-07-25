@@ -9,10 +9,10 @@
     <div class="col-sm-2 align-self-center">
       <div class="row">
         <div class="col">
-          <fa-icon icon="edit" (click)="delete(todos.id)"></fa-icon>
+          <fa-icon icon="edit" (click)="update(todos.id)"></fa-icon>
         </div>
         <div class="col">
-          <fa-icon icon="trash"></fa-icon>
+          <fa-icon icon="trash" (click)="delete(todos.id)"></fa-icon>
         </div>
       </div>
     </div>
