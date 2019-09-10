@@ -9,12 +9,17 @@ import {NewCourseFormComponent} from './new-course-form/new-course-form.componen
 import {SignupFormComponent} from './signup-form/signup-form.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {NewtodoComponent} from './newtodo/newtodo.component';
+import {NewtopicComponent} from './newtopic/newtopic.component';
 
 
 const routes: Routes = [
   {
     path: 'topics',
     component: TopicsComponent
+  },
+  {
+    path: 'topics/new',
+    component: NewtopicComponent
   },
   {
     path: 'todo',

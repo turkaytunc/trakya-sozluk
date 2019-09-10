@@ -25,6 +25,7 @@ import {TodoComponent} from './todo/todo.component';
 import {TodoService} from './todo.service';
 import { NewtodoComponent } from './newtodo/newtodo.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { NewtopicComponent } from './newtopic/newtopic.component';
 
 
 
@@ -46,7 +47,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     NewCourseFormComponent,
     PersonComponent,
     TodoComponent,
-    NewtodoComponent
+    NewtodoComponent,
+    NewtopicComponent
   ],
   imports: [
     BrowserModule,

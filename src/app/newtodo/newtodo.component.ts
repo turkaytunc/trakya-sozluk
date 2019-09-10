@@ -15,7 +15,7 @@ export class NewtodoComponent implements OnInit {
   }
 
   submit(f): void {
-    const url = 'http://localhost:8080/todo';
+    const url = 'http://89.40.125.228:8080/todo';
     this.http.post(url, f.value).subscribe(
       res => {
         location.reload();

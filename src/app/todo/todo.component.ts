@@ -34,7 +34,7 @@ export class TodoComponent implements OnInit {
       });
   }
 
-  private update(id: number) {
+  private update(id: number): void {
     const str = window.prompt();
     let todo = new Todo();
     todo.setDescription(str);
@@ -43,7 +43,7 @@ export class TodoComponent implements OnInit {
     this.service.update(todo, id);
   }
 
-  private delete(id: number) {
+  private delete(id: number): void {
     console.log('test');
     this.service.delete(id);
   }

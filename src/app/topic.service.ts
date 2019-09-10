@@ -10,7 +10,7 @@ import {Topic} from './topics/model/topic';
 })
 export class TopicService {
 
-  private BASE_URL = 'http://localhost:8080';
+  private BASE_URL = 'http://89.40.125.228:8080';
   private ALL_TOPICS = `${this.BASE_URL}\\topics`;
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
